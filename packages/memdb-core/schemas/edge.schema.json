@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memdb-poc/edge.schema.json",
+  "type": "object",
+  "required": ["id","edgeKey","predicate","s","o","validFrom","recordedAt","confidence","sourceEventId","pack","tags"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^edge_" },
+    "edgeKey": { "type": "string" },
+    "predicate": { "type": "string" },
+    "s": { "type": "string" },
+    "o": { "type": "string" },
+    "validFrom": { "type": "string", "format": "date-time" },
+    "validTo": { "type": ["string","null"], "format": "date-time" },
+    "recordedAt": { "type": "string", "format": "date-time" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "sourceEventId": { "type": "string" },
+    "supersedes": { "type": ["string","null"] },
+    "pack": { "type": "string" },
+    "tags": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

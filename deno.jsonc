@@ -1,0 +1,22 @@
+{
+  "name": "@srdjan/memdb-monorepo",
+  "workspace": [
+    "packages/memdb-core",
+    "packages/memdb-cli",
+    "packages/memdb-api",
+    "apps/memdb-web",
+    "packages/memdb-mcp",
+    "packages/memdb-turso"
+  ],
+  "tasks": {
+    "mcp": "deno run -A packages/memdb-mcp/src/main.ts",
+    "api": "deno task -c packages/memdb-api/deno.jsonc dev",
+    "core": "deno task -c packages/memdb-core/deno.jsonc",
+    "mem": "deno task -c packages/memdb-cli/deno.jsonc mem",
+    "fmt": "deno fmt -c packages/memdb-core/deno.jsonc && deno fmt -c packages/memdb-turso/deno.jsonc && deno fmt -c apps/memdb-web/deno.jsonc",
+    "lint": "deno lint -c packages/memdb-core/deno.jsonc && deno lint -c packages/memdb-turso/deno.jsonc && deno lint -c apps/memdb-web/deno.jsonc",
+    "test": "deno test -c packages/memdb-core/deno.jsonc",
+    "turso:sync": "deno run -A packages/memdb-turso/src/cli_sync.ts",
+    "turso:migrate": "deno run -A packages/memdb-turso/src/cli_migrate.ts"
+  }
+}

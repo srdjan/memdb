@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memdb-poc/event.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "agentId",
+    "kind",
+    "recordedAt",
+    "pack",
+    "refs"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^evt_"
+    },
+    "agentId": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pack": {
+      "type": "string"
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "id"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "entity",
+              "edge",
+              "blob"
+            ]
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "predicate",
+          "s",
+          "o",
+          "validFrom",
+          "confidence"
+        ],
+        "properties": {
+          "predicate": {
+            "type": "string"
+          },
+          "s": {
+            "type": "string"
+          },
+          "o": {
+            "type": "string"
+          },
+          "validFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

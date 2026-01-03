@@ -1,0 +1,63 @@
+{
+  "name": "identity_verifier",
+  "entityTypes": [
+    "Subject",
+    "RelyingParty",
+    "VerificationCase",
+    "Evidence",
+    "Document",
+    "BiometricCheck",
+    "Device",
+    "Key",
+    "Credential",
+    "Issuer",
+    "Verifier",
+    "Policy",
+    "Rule",
+    "Decision",
+    "AssuranceLevel",
+    "Jurisdiction",
+    "Artifact"
+  ],
+  "predicates": [
+    "initiated_by",
+    "about",
+    "presented",
+    "derived_from",
+    "verified_by",
+    "issued_by",
+    "satisfies",
+    "violates",
+    "governed_by",
+    "results_in",
+    "raises",
+    "revoked_by",
+    "attested_by"
+  ],
+  "eventKinds": [
+    "case_opened",
+    "evidence_requested",
+    "evidence_received",
+    "evidence_verified",
+    "policy_evaluated",
+    "assurance_computed",
+    "decision_made",
+    "credential_issued",
+    "credential_revoked",
+    "appeal_received",
+    "case_reopened",
+    "correction_recorded"
+  ],
+  "policy": {
+    "requiredTags": [
+      "tenantId",
+      "purpose",
+      "jurisdiction",
+      "pack"
+    ],
+    "forbiddenEmbeddingTags": [
+      "pii=true"
+    ],
+    "defaultRetentionClass": "audit_7y"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memdb-poc/pack.schema.json",
+  "type": "object",
+  "required": ["name","entityTypes","predicates","eventKinds","policy"],
+  "properties": {
+    "name": { "type": "string" },
+    "entityTypes": { "type": "array", "items": { "type": "string" } },
+    "predicates": { "type": "array", "items": { "type": "string" } },
+    "eventKinds": { "type": "array", "items": { "type": "string" } },
+    "policy": {
+      "type": "object",
+      "required": ["requiredTags","forbiddenEmbeddingTags","defaultRetentionClass"],
+      "properties": {
+        "requiredTags": { "type": "array", "items": { "type": "string" } },
+        "forbiddenEmbeddingTags": { "type": "array", "items": { "type": "string" } },
+        "defaultRetentionClass": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

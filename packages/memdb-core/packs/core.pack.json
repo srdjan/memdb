@@ -1,0 +1,24 @@
+{
+  "name": "core",
+  "entityTypes": [
+    "Decision",
+    "Policy",
+    "Artifact"
+  ],
+  "predicates": [
+    "derived_from",
+    "governed_by"
+  ],
+  "eventKinds": [
+    "tool_result",
+    "decision_made",
+    "correction_recorded"
+  ],
+  "policy": {
+    "requiredTags": [
+      "pack"
+    ],
+    "forbiddenEmbeddingTags": [],
+    "defaultRetentionClass": "ops_180d"
+  }
+}

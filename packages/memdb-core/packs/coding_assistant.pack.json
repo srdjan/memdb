@@ -1,0 +1,55 @@
+{
+  "name": "coding_assistant",
+  "entityTypes": [
+    "Repo",
+    "Branch",
+    "File",
+    "Symbol",
+    "Doc",
+    "Issue",
+    "PR",
+    "BuildRun",
+    "TestRun",
+    "Error",
+    "Patch",
+    "Decision",
+    "Preference",
+    "Artifact"
+  ],
+  "predicates": [
+    "contains",
+    "defines",
+    "references",
+    "depends_on",
+    "implements",
+    "fixes",
+    "validated_by",
+    "discussed_in",
+    "generated_by",
+    "prefers",
+    "derived_from"
+  ],
+  "eventKinds": [
+    "prompt_received",
+    "tool_result",
+    "plan_written",
+    "patch_proposed",
+    "patch_applied",
+    "build_ran",
+    "test_ran",
+    "error_observed",
+    "decision_recorded",
+    "preference_updated"
+  ],
+  "policy": {
+    "requiredTags": [
+      "tenant",
+      "repoId",
+      "pack"
+    ],
+    "forbiddenEmbeddingTags": [
+      "secret=true"
+    ],
+    "defaultRetentionClass": "ops_180d"
+  }
+}

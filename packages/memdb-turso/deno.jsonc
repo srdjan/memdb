@@ -1,0 +1,12 @@
+{
+  "name": "@srdjan/memdb-turso",
+  "version": "0.1.0",
+  "imports": {
+    "@memdb/core/": "../memdb-core/src/",
+    "@std/path": "https://deno.land/std@0.224.0/path/mod.ts"
+  },
+  "tasks": {
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  }
+}

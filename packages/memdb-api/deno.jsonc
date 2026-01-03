@@ -1,0 +1,15 @@
+{
+  "name": "@srdjan/memdb-api",
+  "imports": {
+    "@memdb/core/": "../memdb-core/src/",
+    "@std/http/": "https://deno.land/std@0.224.0/http/",
+    "@std/path": "https://deno.land/std@0.224.0/path/mod.ts",
+    "@memdb/turso/": "../memdb-turso/src/"
+  },
+  "tasks": {
+    "dev": "deno run -A --watch=src src/main.ts",
+    "start": "deno run -A src/main.ts",
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  }
+}

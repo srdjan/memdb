@@ -1,0 +1,8 @@
+{
+  "name": "@srdjan/memdb-cli",
+  "tasks": {
+    "mem": "deno run --allow-net src/main.ts",
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  }
+}

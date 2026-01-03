@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memdb-poc/entity.schema.json",
+  "type": "object",
+  "required": ["id","type","key","createdAt","tags"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^ent_" },
+    "type": { "type": "string" },
+    "key": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "tags": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

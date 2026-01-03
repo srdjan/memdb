@@ -1,0 +1,42 @@
+{
+  "name": "coordination",
+  "entityTypes": [
+    "WorkItem",
+    "WorkStatus",
+    "AgentInstance",
+    "Artifact"
+  ],
+  "predicates": [
+    "work_by",
+    "work_action",
+    "work_affects",
+    "work_claimed_by",
+    "work_blocks",
+    "work_depends_on",
+    "work_supersedes"
+  ],
+  "eventKinds": [
+    "pool/post",
+    "pool/claim",
+    "pool/release"
+  ],
+  "policy": {
+    "requiredTags": [
+      "pack"
+    ],
+    "forbiddenEmbeddingTags": [],
+    "defaultRetentionClass": "ops_180d",
+    "conflictPolicies": [
+      {
+        "predicate": "work_action",
+        "uniqueness": "one_per_subject",
+        "lane": "all"
+      },
+      {
+        "predicate": "work_claimed_by",
+        "uniqueness": "one_per_subject",
+        "lane": "all"
+      }
+    ]
+  }
+}
